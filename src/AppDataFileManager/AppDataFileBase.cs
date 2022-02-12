@@ -3,7 +3,7 @@
 namespace AppDataFileManager
 {
     public abstract class AppDataFileBase<TEntity>
-    where TEntity : class, new()
+        where TEntity : class, new()
     {
         #region Constructors
 

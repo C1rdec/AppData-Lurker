@@ -1,6 +1,12 @@
 # Example
 
 ```c#
+var file = new FileExample();
+file.Initialize();
+```
+
+### Definitions
+```c#
 public class FileExample : AppDataFileBase<ModelExample>
 {
     /// <summary>
@@ -27,6 +33,6 @@ public class ModelExample
 }
 ```
 
-# Result
+### Result
 
 ![image](https://user-images.githubusercontent.com/5436436/153727110-fc9577b5-0a43-422f-aa1d-07a30bb86687.png)

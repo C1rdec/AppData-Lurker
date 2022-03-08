@@ -18,12 +18,12 @@ namespace AppDataFileManager
 
         public virtual void Initialize()
         {
-            if (!Directory.Exists(this.FolderPath))
+            if (!Directory.Exists(FolderPath))
             {
-                Directory.CreateDirectory(this.FolderPath);
+                Directory.CreateDirectory(FolderPath);
             }
 
-            this.HandleSubFolder();
+            HandleSubFolder();
 
             if (!File.Exists(this.FilePath))
             {
@@ -37,7 +37,14 @@ namespace AppDataFileManager
                 }
                 catch
                 {
-                    File.Delete(FilePath);
+                    var backupPath = $"{FilePath}.bak";
+                    if (File.Exists(backupPath))
+                    {
+                        File.Delete(backupPath);
+                    }
+
+                    File.Move(FilePath, backupPath);
+                    
                     Entity = new TEntity();
                     Save();
                 }

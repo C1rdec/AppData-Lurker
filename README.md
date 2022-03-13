@@ -1,4 +1,10 @@
-# Example
+# Install
+
+```PowerShell
+Install-Package AppDataFileManager
+```
+
+### Usage
 
 ```c#
 var file = new FileExample();

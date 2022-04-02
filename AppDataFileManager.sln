@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataFileManager.Console", "AppDataFileManager.Console\AppDataFileManager.Console.csproj", "{DEB53E87-E842-4F3C-8A05-76989C60C731}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataFileManager.Console", "src\AppDataFileManager.Console\AppDataFileManager.Console.csproj", "{DEB53E87-E842-4F3C-8A05-76989C60C731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

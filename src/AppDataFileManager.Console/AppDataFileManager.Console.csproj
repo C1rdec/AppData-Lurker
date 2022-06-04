@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\AppDataFileManager\AppDataFileManager.csproj" />
+    <ProjectReference Include="..\AppDataFileManager\AppDataFileManager.csproj" />
   </ItemGroup>
 
 </Project>

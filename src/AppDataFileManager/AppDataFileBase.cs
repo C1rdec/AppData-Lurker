@@ -53,6 +53,12 @@ namespace AppDataFileManager
 
         #endregion
 
+        #region Events
+
+        public event EventHandler OnFileSaved;
+
+        #endregion
+
         #region Properties
 
         public TEntity Entity;
@@ -96,6 +102,8 @@ namespace AppDataFileManager
             File.WriteAllText(filePath, jsonValue);
 
             Entity = entity;
+
+            OnFileSaved?.Invoke(this, EventArgs.Empty);
         }
 
         protected T Deserialize<T>() => Deserialize<T>(File.ReadAllText(this.FilePath));

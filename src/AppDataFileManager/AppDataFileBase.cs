@@ -57,7 +57,7 @@ namespace AppDataFileManager
 
         #region Events
 
-        public event EventHandler OnFileSaved;
+        public event EventHandler<TEntity> OnFileSaved;
 
         #endregion
 
@@ -85,9 +85,15 @@ namespace AppDataFileManager
 
         public void Save() => Save(Entity);
 
+        public void Save(bool raiseEvent) => Save(Entity, raiseEvent);
+
         public void Save(string jsonValue) => Save(Deserialize<TEntity>(jsonValue));
 
-        public void Save(TEntity entity)
+        public void Save(string jsonValue, bool raiseEvent) => Save(Deserialize<TEntity>(jsonValue), raiseEvent);
+
+        public void Save(TEntity entity) => Save(entity, true);
+
+        public void Save(TEntity entity, bool raiseEvent)
         {
             var name = string.Empty;
             var nameProperty = entity.GetType().GetProperty("Name");
@@ -105,7 +111,10 @@ namespace AppDataFileManager
 
             Entity = entity;
 
-            OnFileSaved?.Invoke(this, EventArgs.Empty);
+            if (raiseEvent)
+            {
+                OnFileSaved?.Invoke(this, entity);
+            }
         }
 
         protected T Deserialize<T>() => Deserialize<T>(File.ReadAllText(this.FilePath));

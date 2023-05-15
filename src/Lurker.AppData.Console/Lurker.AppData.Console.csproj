@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppDataFileManager\AppDataFileManager.csproj" />
+    <ProjectReference Include="..\AppDataFileManager\Lurker.AppData.csproj" />
   </ItemGroup>
 
 </Project>

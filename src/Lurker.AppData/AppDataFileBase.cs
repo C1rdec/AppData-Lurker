@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.Json;
 
-namespace AppDataFileManager
+namespace Lurker.AppData
 {
     public abstract class AppDataFileBase<TEntity>
         where TEntity : class, new()

@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDataFileManager", "src\AppDataFileManager\AppDataFileManager.csproj", "{E84E5DC5-89C2-4F77-94C2-41D0ED682FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lurker.AppData", "src\Lurker.AppData\Lurker.AppData.csproj", "{E84E5DC5-89C2-4F77-94C2-41D0ED682FDE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{38871C72-7F80-47B0-96D2-D4F73E98231F}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataFileManager.Console", "src\AppDataFileManager.Console\AppDataFileManager.Console.csproj", "{DEB53E87-E842-4F3C-8A05-76989C60C731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lurker.AppData.Console", "src\Lurker.AppData.Console\Lurker.AppData.Console.csproj", "{DEB53E87-E842-4F3C-8A05-76989C60C731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

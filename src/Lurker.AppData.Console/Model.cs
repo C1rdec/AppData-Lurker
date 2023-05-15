@@ -1,4 +1,4 @@
-﻿namespace AppDataFileManager.Console
+﻿namespace Lurker.AppData.Console
 {
     public class Model
     {

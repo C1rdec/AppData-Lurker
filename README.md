@@ -1,7 +1,7 @@
 # Install
 
 ```PowerShell
-Install-Package AppDataFileManager
+Install-Package Lurker.AppData
 ```
 
 ### Usage

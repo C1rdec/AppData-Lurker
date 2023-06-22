@@ -83,6 +83,16 @@ namespace Lurker.AppData
 
         #region Methods
 
+        public void Delete()
+        {
+            if (File.Exists(FilePath))
+            {
+                File.Delete(FilePath);
+            }
+
+            Entity = new TEntity();
+        }
+
         public void Save() => Save(Entity);
 
         public void Save(bool raiseEvent) => Save(Entity, raiseEvent);

@@ -1,12 +1,24 @@
 ﻿using System;
 using System.IO;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Lurker.AppData
 {
     public abstract class AppDataFileBase<TEntity>
         where TEntity : class, new()
     {
+        #region Fields
+
+        private readonly JsonSerializerOptions _options = new JsonSerializerOptions 
+        {
+            WriteIndented = true, 
+            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+        };
+
+        #endregion
+
+
         #region Constructors
 
         public AppDataFileBase()
@@ -35,7 +47,7 @@ namespace Lurker.AppData
             {
                 try
                 {
-                    Entity = JsonSerializer.Deserialize<TEntity>(File.ReadAllText(FilePath));
+                    Entity = JsonSerializer.Deserialize<TEntity>(File.ReadAllText(FilePath), _options);
                 }
                 catch
                 {
@@ -116,7 +128,7 @@ namespace Lurker.AppData
             var filePath = string.IsNullOrEmpty(name) ? FilePath : Path.Combine(FolderPath, name);
 
             HandleSubFolder();
-            var jsonValue = JsonSerializer.Serialize(entity, new JsonSerializerOptions { WriteIndented = true });
+            var jsonValue = JsonSerializer.Serialize(entity, _options);
             File.WriteAllText(filePath, jsonValue);
 
             Entity = entity;
